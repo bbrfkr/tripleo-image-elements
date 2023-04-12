@@ -8,12 +8,7 @@ manifest=$(get-pip-manifest os-refresh-config)
 
 # pip and virtualenv is installed by the pip-and-virtualenv element
 
-if [[ "$DISTRO_NAME" == "debian" ]] && [[ "$DIB_RELEASE" == "stable" || "$DIB_RELEASE" == "bullseye" ]]
-then
-    virtualenv /opt/stack/venvs/os-refresh-config
-else
-    virtualenv --setuptools /opt/stack/venvs/os-refresh-config
-fi
+virtualenv /opt/stack/venvs/os-refresh-config
 
 set +u
 source /opt/stack/venvs/os-refresh-config/bin/activate

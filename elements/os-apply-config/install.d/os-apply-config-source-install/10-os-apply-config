@@ -5,12 +5,7 @@ manifest=$(get-pip-manifest os-apply-config)
 
 env | sort
 
-if [[ "$DISTRO_NAME" == "debian" ]] && [[ "$DIB_RELEASE" == "stable" || "$DIB_RELEASE" == "bullseye" ]]
-then
-    virtualenv $OS_APPLY_CONFIG_VENV_DIR
-else
-    virtualenv --setuptools $OS_APPLY_CONFIG_VENV_DIR
-fi
+virtualenv $OS_APPLY_CONFIG_VENV_DIR
 
 set +u
 source $OS_APPLY_CONFIG_VENV_DIR/bin/activate

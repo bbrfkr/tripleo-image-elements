@@ -3,12 +3,7 @@ set -eux
 
 manifest=$(get-pip-manifest os-collect-config)
 
-if [[ "$DISTRO_NAME" == "debian" ]] && [[ "$DIB_RELEASE" == "stable" || "$DIB_RELEASE" == "bullseye" ]]
-then
-    virtualenv $OS_COLLECT_CONFIG_VENV_DIR
-else
-    virtualenv --setuptools $OS_COLLECT_CONFIG_VENV_DIR
-fi
+virtualenv $OS_COLLECT_CONFIG_VENV_DIR
 
 set +u
 source $OS_COLLECT_CONFIG_VENV_DIR/bin/activate
